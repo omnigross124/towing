@@ -1,0 +1,560 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, Arial, sans-serif;
+}
+
+body{
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+:root{
+  /* Base */
+  --bg: #f2f4f7;
+  --card: #ffffff;
+  --text: #0b1220;
+
+  /* Theme (your new professional combo) */
+  --hero1: #0b2a3a;     /* dark blue */
+  --hero2: #1d3b52;     /* blue-grey */
+  --accent: #cfe8ff;    /* light blue accent (replaces yellow) */
+  --accentText: #062033;
+
+  /* CTA / bars */
+  --darkbar: #0b1220;   /* black-blue */
+  --sticky: #1f3446;    /* grey-blue sticky (NOT red) */
+  --sticky2: #142534;   /* darker grey-blue for gradient */
+
+  /* UI */
+  --shadow: 0 10px 28px rgba(0,0,0,0.07);
+  --border: 1px solid rgba(0,0,0,0.07);
+}
+
+/* SECTION BASE */
+section {
+  padding: 22px 16px;
+  margin: 14px auto;
+  max-width: 1500px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+/* HERO = FULL SCREEN WIDTH + TALL */
+.hero {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  border-radius: 0;
+  min-height: 62vh;
+  padding: 70px 18px;
+
+  /* grey geometric style  */
+  background:
+    linear-gradient(135deg, rgba(13,18,22,.88), rgba(13,18,22,.88)),
+    linear-gradient(135deg, rgba(90,120,135,.25) 0%, rgba(40,55,65,.10) 40%, rgba(0,0,0,0) 70%),
+    repeating-linear-gradient(120deg, rgba(255,255,255,.06) 0 140px, rgba(255,255,255,0) 140px 280px),
+    radial-gradient(1200px 700px at 70% 30%, rgba(105,130,150,.45), rgba(15,20,24,.95));
+
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+/* Main heading size + position like screenshot */
+.hero h1 {
+  font-size: clamp(44px, 6.5vw, 92px);
+  font-weight: 900;
+  letter-spacing: 0.3px;
+  line-height: 1.05;
+  margin: 0 0 26px 0;
+}
+
+/* Sub lines centered with spacing like screenshot */
+.sub {
+  font-size: 18px;
+  font-weight: 700;
+  opacity: 0.95;
+  margin: 0 0 22px 0;
+  line-height: 1.6;
+}
+
+/* Small white strip call button */
+.hero .call-btn,
+.hero .hero-cta,
+.call-btn.primary {
+  display: block;
+  width: 100%;
+  max-width: 1000px;   /* keeps it clean on large screens */
+  margin: 20px auto;   /* center horizontally */
+  padding: 20px 24px;
+
+  border-radius: 16px; /* slightly rounded, professional */
+  font-size: 1.2rem;
+  font-weight: 900;
+  text-align: center;
+
+  letter-spacing: 0.3px;
+}
+
+
+
+/* headings & lists */
+h2 {
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+  font-weight: 900;
+}
+
+ul {
+  padding-left: 18px;
+}
+
+li {
+  margin: 6px 0;
+  font-size: 0.98rem;
+}
+
+/* hero points left aligned */
+.hero-points {
+   align-self: flex-start;
+  text-align: left;
+  max-width: 700px;
+  margin-top: 20px;
+}
+
+.hero-points .point {
+  font-size: 1rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.hero-phone {
+  margin-top: 10px;
+  font-size: 1.15rem;
+  font-weight: 950;
+  color: #fff;
+  text-decoration: none;
+  text-align: left;
+}
+
+/* small helper text */
+.note-plain {
+  margin: 10px 0 10px;
+  font-size: 0.98rem;
+}
+
+/* IMAGE GROUP */
+/*.section-image-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  padding: 0 12px;
+  margin: 14px auto;
+  max-width: 1000px;
+}
+
+.section-image-group img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.10);
+}*/
+
+/* DESKTOP 
+@media (min-width: 768px) {
+  .section-image-group {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 20px auto;
+  }
+}*/
+
+/* floating call icon */
+.floating-call-icon {
+  position: fixed;
+  bottom: 80px;
+  right: 18px;
+
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+
+  background: #ffffff;
+  color: #e11d48;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 24px;
+  text-decoration: none;
+
+  box-shadow: 0 14px 32px rgba(0,0,0,0.30);
+  z-index: 99999;
+}
+
+/* pulse */
+.floating-call-icon::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  animation: emergencyPulse 2s infinite;
+  box-shadow: 0 0 0 0 rgba(225, 29, 72, 0.6);
+}
+
+@keyframes emergencyPulse {
+  0% { box-shadow: 0 0 0 0 rgba(225, 29, 72, 0.55); }
+  70% { box-shadow: 0 0 0 16px rgba(225, 29, 72, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(225, 29, 72, 0); }
+}
+
+/* hide floating on desktop */
+@media (min-width: 768px) {
+  .floating-call-icon { display: none; }
+}
+
+/* SERVICES & AREAS */
+.services li,
+.areas li {
+  list-style: disc;
+}
+
+/* FINAL CTA */
+.final {
+  background: linear-gradient(135deg, #0b0f14, #0b0f14);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  font-size: 0.88rem;
+  padding: 18px 12px;
+  color: #fff;
+  background: #0b0f14;
+}
+
+/* STICKY CALL */
+#stickyCall {
+  position: fixed;
+  bottom: -100px;
+  left: 0;
+  right: 0;
+
+  background: #111827; /* dark grey */
+  color: #fff;
+
+  text-align: center;
+  padding: 18px;
+  font-size: 1.15rem;
+  font-weight: 950;
+  text-decoration: none;
+
+  z-index: 999;
+  box-shadow: 0 -6px 26px rgba(0,0,0,0.30);
+  transition: bottom 0.3s ease;
+}
+/* ===== HERO MAIN CTA FIX (override link look) ===== */
+.hero a.call-btn.primary {
+  display: block;
+  width: 100%;
+  max-width: 1500px;
+  margin: 22px auto;
+  padding: 18px 26px;
+
+  background: #ffffff;
+  color: #0b1220;
+  text-decoration: none;      /* removes underline */
+  border: 1px solid rgba(0,0,0,0.18);
+  border-radius: 16px;
+
+  font-size: 1.15rem;
+  font-weight: 950;
+  letter-spacing: 0.2px;
+
+  box-shadow: 0 14px 34px rgba(0,0,0,0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* hover/press feels premium */
+.hero a.call-btn.primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 42px rgba(0,0,0,0.30);
+}
+
+.hero a.call-btn.primary:active {
+  transform: translateY(0px) scale(0.99);
+}
+
+/* remove ugly default focus outline but keep accessibility */
+.hero a.call-btn.primary:focus-visible {
+  outline: 3px solid rgba(207,232,255,0.75);
+  outline-offset: 4px;
+}
+/* =========================================
+   ABOVE THE FOLD – MOBILE FIRST
+========================================= */
+
+.above-fold{
+  width: calc(100% - 24px);
+  max-width: 1500px;
+  margin: 16px auto;
+  background: #fff;
+  border-radius: 18px;
+  padding: 26px 18px;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Heading */
+.above-fold h2{
+  font-size: 1.15rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* UL reset */
+.above-fold ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* List items */
+.above-fold ul li{
+  position: relative;
+  margin: 0;
+  padding: 1px 0 1px 28px;
+  font-size: 1rem;
+  font-weight: 450;
+  color: #0b1220;
+  line-height: 1.55;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+.above-fold ul li:first-child{
+  border-top: 0;
+  padding-top: px;
+}
+
+/* Bullet dot */
+.above-fold ul li::before{
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 5px;
+  color: #111;
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+/* Call button */
+.above-fold .call-btn{
+  display: block;
+  width: 100%;
+  margin: 18px 0 0;
+  padding: 18px 18px;
+  background: #0b0f14;
+  color: #fff !important;
+  text-align: center;
+  border-radius: 16px;
+  font-size: 1.12rem;
+  font-weight: 950;
+  text-decoration: none !important;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.22);
+}
+
+.above-fold .call-btn:hover{
+  transform: translateY(-1px);
+}
+
+.above-fold .call-btn:active{
+  transform: translateY(0);
+}
+
+/* Desktop adjustment */
+@media (min-width: 768px){
+  .above-fold{
+    padding: 32px 26px;
+  }
+  .above-fold h2{
+    font-size: 1.65rem;
+  }
+}
+
+
+
+/* SECTION CTA  */
+.section-cta {
+  display: block;
+  width: 100%;
+  margin-top: 28px;
+
+  padding: 22px 20px;
+  border-radius: 18px;
+
+  background: linear-gradient(135deg, #0b1220, #111827);
+  color: #ffffff;
+
+  font-size: 1.25rem;
+  font-weight: 900;
+  text-align: center;
+  text-decoration: none;
+
+  letter-spacing: 0.4px;
+
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  transition: all 0.25s ease;
+}
+
+.section-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.35);
+}
+/* FULL WIDTH FINAL CTA */
+.final-cta-full {
+  display: block;
+
+  width: 100%;
+  margin: 28px 0;
+
+  padding: 26px 20px;
+
+  border-radius: 18px;
+
+  background: linear-gradient(135deg, #ffffff, #e5e7eb);
+  color: #0b1220;
+
+  font-size: 1.3rem;
+  font-weight: 900;
+  text-align: center;
+  text-decoration: none;
+
+  letter-spacing: 0.5px;
+
+  box-shadow: 0 18px 45px rgba(0,0,0,0.45);
+  transition: all 0.25s ease;
+}
+
+.final-cta-full:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.55);
+}
+.reassurance{
+  max-width: 1500px;
+  
+  font-size: 0.98rem;
+  padding: 60px 30px;
+
+  background: #fff;
+  border-radius: 18px;
+
+  box-shadow: 0 14px 40px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.reassurance h2{
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+  font-weight: 900;
+}
+
+.reassurance ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.reassurance ul li{
+  position: relative;
+  padding-left: 28px;     /* space for dot */
+  margin: 10px 0;
+  line-height: 1.55;
+}
+
+.reassurance-bold{
+  margin-top: 2px;
+  font-size: 1rem;
+  font-weight: 900;
+}
+/* custom bullet dot */
+.reassurance ul li::before{
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  color: #111;
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.reassurance-call{
+  display: inline-block;
+  margin-top: 10px;
+
+  font-size: 1.1rem;
+  font-weight: 900;
+  text-decoration: none;
+  color: #0b1220;
+}
+
+/* image container */
+.image-showcase{
+  width: calc(100% - 24px);
+  max-width: 1100px;
+  margin: 14px auto;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.04);
+  padding: 12px;
+}
+
+/* the viewport: shows ONE image, scroll changes it */
+.image-scroll{
+  height: 320px;                 /* 👈 change height if you want */
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: 12px;
+
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+
+  /* optional: nicer scrolling on mobile */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* each image takes full viewport height */
+.image-scroll .snap-item{
+  scroll-snap-align: start;
+  height: 320px;                 /* must match .image-scroll height */
+  margin: 0;
+}
+
+/* image fits perfectly */
+.image-scroll img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}

@@ -1,0 +1,247 @@
+<?php
+/* ===============================
+   CLICK-TO-CALL LOGGING
+================================ */
+if (isset($_GET['call']) && $_GET['call'] === '1') {
+    $logDir = __DIR__ . '/logs';
+    if (!is_dir($logDir)) {
+        mkdir($logDir, 0755, true);
+    }
+
+    $logFile = $logDir . '/call-log.txt';
+    $data = [
+        'time' => date('Y-m-d H:i:s'),
+        'ip' => $_SERVER['REMOTE_ADDR'] ?? 'unknown',
+        'agent' => $_SERVER['HTTP_USER_AGENT'] ?? 'unknown'
+    ];
+    file_put_contents($logFile, json_encode($data) . PHP_EOL, FILE_APPEND);
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ashwini Towing Service – 24×7 Emergency Car Towing</title>
+
+<link rel="stylesheet" href="style.css">
+
+<!-- PERFORMANCE -->
+<link rel="preconnect" href="/">
+
+<!-- OPEN GRAPH TAGS -->
+<meta property="og:type" content="business.business">
+<meta property="og:site_name" content="Ashwini Towing Service">
+
+<meta property="og:title"
+      content="Ashwini Towing Service – 24×7 Emergency Car Towing">
+
+<meta property="og:description"
+      content="Car Breakdown or Accident? 24×7 Emergency Car Towing in Pune & Pimpri-Chinchwad. Avg arrival 30–45 mins. Call now: 85529 11911.">
+
+<meta property="og:url"
+      content="">
+
+<meta property="og:image"
+      content="">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body>
+
+<!-- 1️⃣ HERO -->
+<section class="hero">
+  <!--<div class="logo-wrap">
+    <img src="assets/logo.png"
+         alt="Ashwini Towing Service"
+         class="logo">
+  </div>-->
+
+  <h1>Ashwini Towing Service</h1>
+  <p class="sub">
+    24×7 Emergency Car Towing<br>
+    Pune &amp; Pimpri-Chinchwad
+  </p>
+
+  <a class="call-btn primary"
+     href="tel:08552911911">
+     📞 Call Now – Immediate Help : 85529 11911
+  </a>
+
+  <div class="hero-points">
+    <div class="point"><strong>Stuck on the road? Accident? Car won’t start?</strong></div>
+    <div class="point"><strong>We’re already on the way.</strong></div>
+    <a href="tel:08552911911" class="hero-phone">
+      📞 85529 11911
+    </a>
+  </div>
+</section>
+
+<!-- 3️⃣ EMERGENCY RESPONSE INFO -->
+<section class="above-fold">
+  <h2>❗ Car Breakdown or Accident?</h2>
+  <ul class="">
+    <li>Emergency Towing in Pune – 24×7</li>
+    <li>Fast. Local. Trusted. We reach you anytime – day or night.</li>
+    <li>Avg arrival:30–45 mins in Pune &amp; PCMC</li>
+    <li>Call for Immediate Towing</li>
+  </ul>
+
+  <a href="tel:08552911911" class="call-btn">📞 CALL NOW – 85529 11911</a>
+
+<section class="image-showcase">
+  <div class="image-scroll">
+    <figure class="snap-item">
+      <img src="../assets/img.jpeg" alt="Towing 1" />
+    </figure>
+
+    <figure class="snap-item">
+      <img src="img2.jpg" alt="Towing 2" />
+    </figure>
+
+    <figure class="snap-item">
+      <img src="img3.jpg" alt="Towing 3" />
+    </figure>
+
+    <figure class="snap-item">
+      <img src="img4.jpg" alt="Towing 4" />
+    </figure>
+  </div>
+</section>
+
+
+<!-- 4️⃣ SERVICES -->
+<section>
+  <h2>You’re Not Alone. Help Is 1 Call Away.</h2>
+  <ul class="services">
+    <li> Accident or sudden breakdown</li>
+    <li> Late night / highway emergency</li>
+    <li> Car not starting / engine failure</li>
+    <li> Flat tyre or stuck vehicle</li>
+  </ul>
+
+  <p class="note-plain">👉 <strong>Stay calm. We handle everything.</strong></p>
+  <p class="note-plain">📞 <strong>Call Ashwini Towing Service Now</strong></p>
+</section>
+
+<!-- 5️⃣ SERVICE AREAS -->
+<section>
+  <h2>🚗 Situation-Based Copy</h2>
+  <ul class="areas">
+    <li>🚧 <strong>Accident on Road?</strong> — Safe recovery with trained operators.</li>
+    <li>⚠️ <strong>Car Broke Down Suddenly?</strong> — Quick towing to garage or home.</li>
+    <li>🌙 <strong>Night Emergency?</strong> — 24×7 service – even at 2 AM.</li>
+    <li>🧳 <strong>Highway / City / Society?</strong> — We cover all Pune &amp; Pimpri-Chinchwad areas.</li>
+  </ul>
+
+ <a href="tel:08552911911" class="section-cta">
+  📞 CALL NOW – 85529 11911
+</a>
+
+</section>
+
+<!-- 6️⃣ WHY CHOOSE US -->
+<section>
+  <h2>⏱️ Time Assurance</h2>
+  <p class="note-plain"><strong>Fast Response. No Waiting.</strong></p>
+
+  <ul>
+    <li>Local towing vehicles nearby</li>
+    <li>Quick dispatch after your call</li>
+    <li>No unnecessary delays</li>
+  </ul>
+
+  <p class="note-plain"><strong>Your time matters. Your safety matters.</strong></p>
+  <p class="note-plain">📞 <strong>Call Now – Help Is Moving</strong></p>
+</section>
+
+<!-- 8️⃣ FAQ -->
+<section>
+  <h2>📍 Local Trust Signals (Pune Focused)</h2>
+  <p class="note-plain"><strong>Serving All Major Areas:</strong></p>
+
+  <ul>
+    <li>Pimpri – Chinchwad</li>
+    <li>Wakad – Hinjewadi</li>
+    <li>Baner – Aundh</li>
+    <li>Kothrud – Bavdhan</li>
+    <li>Hadapsar – Wagholi</li>
+    <li>Pune Highways &amp; MIDC areas</li>
+  </ul>
+
+  <p class="note-plain"><strong>Local drivers. Local knowledge. Faster reach.</strong></p>
+  <p class="note-plain">📞 <strong>85529 11911</strong></p>
+</section>
+<section class="reassurance">
+<h2>⭐Why People Choose Our Towing Service</h2>
+
+  <ul>
+    <li>Trusted local towing service</li>
+    <li>Careful handling of your vehicle</li>
+    <li>Clear communication</li>
+    <li>Emergency-first approach</li>
+  </ul>
+<p class="reassurance-bold">
+    No confusion. No delay. Just help.
+  </p>
+
+  <a href="tel:08552911911" class="reassurance-call">
+    📞 Tap to Call Now
+  </a>
+</section>
+
+
+<!-- 9️⃣ FINAL CTA -->
+<section class="final">
+  <h2>Need Towing RIGHT NOW?</h2>
+  <p><strong>Don’t search more. Don’t wait.</strong></p>
+ 
+
+  <a href="tel:08552911911" class="final-cta-full">
+  📞 CALL ASHWINI TOWING SERVICE – 85529 11911
+</a>
+
+
+  <p>🟢 Available 24×7 – Pune &amp; PCMC</p>
+</section>
+
+<footer>
+  <p><strong>Ashwini Towing Service</strong></p>
+  <p>24×7 Emergency Car Towing</p>
+
+  <p>📍 Pune &amp; Pimpri-Chinchwad (PCMC)</p>
+
+  <p>
+    📞 <a href="tel:08552911911" style="color:#fff;text-decoration:none;">
+      85529 11911
+    </a>
+  </p>
+
+  <p>⏰ Open 24 hours</p>
+
+  <p style="font-size:0.75rem;opacity:0.8;margin-top:8px;">
+    Serving Pimpri-Chinchwad • Wakad-Hinjewadi • Baner-Aundh • Kothrud-Bavdhan • Hadapsar-Wagholi • Pune Highways &amp; MIDC
+  </p>
+</footer>
+
+<!-- 2️⃣ STICKY CALL BUTTON -->
+<a id="stickyCall"
+   href="tel:08552911911">
+   📞 CALL NOW – 85529 11911
+</a>
+
+<!-- 2floating CALL BUTTON -->
+<a href="tel:08552911911" class="floating-call-icon" aria-label="Call Now">
+  📞
+</a>
+
+<script src="script.js" defer></script>
+</body>
+</html>
