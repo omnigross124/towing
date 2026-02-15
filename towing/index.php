@@ -99,7 +99,7 @@ if (isset($_GET['call']) && $_GET['call'] === '1') {
 <section class="image-showcase">
   <div class="image-scroll">
     <figure class="snap-item">
-      <img src="../assets/img.jpeg" alt="Towing 1" />
+      <img src="" alt="Towing 1" />
     </figure>
 
     <figure class="snap-item">
