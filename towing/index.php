@@ -95,23 +95,23 @@ if (isset($_GET['call']) && $_GET['call'] === '1') {
   </ul>
 
   <a href="tel:08552911911" class="call-btn">📞 CALL NOW – 85529 11911</a>
-
+</section>
 <section class="image-showcase">
   <div class="image-scroll">
     <figure class="snap-item">
-      <img src="" alt="Towing 1" />
+      <img src="./assets/ashwini.png" alt="Towing 1" />
     </figure>
 
     <figure class="snap-item">
-      <img src="img2.jpg" alt="Towing 2" />
+      <img src="./assets/ashwini1.png" alt="Towing 2" />
     </figure>
 
     <figure class="snap-item">
-      <img src="img3.jpg" alt="Towing 3" />
+      <img src="./assets/ashwini2.png" alt="Towing 3" />
     </figure>
 
     <figure class="snap-item">
-      <img src="img4.jpg" alt="Towing 4" />
+      <img src="./assets/ashwini3.png" alt="Towing 4" />
     </figure>
   </div>
 </section>
@@ -121,10 +121,10 @@ if (isset($_GET['call']) && $_GET['call'] === '1') {
 <section>
   <h2>You’re Not Alone. Help Is 1 Call Away.</h2>
   <ul class="services">
-    <li> Accident or sudden breakdown</li>
-    <li> Late night / highway emergency</li>
-    <li> Car not starting / engine failure</li>
-    <li> Flat tyre or stuck vehicle</li>
+    <li>Accident or sudden breakdown</li>
+    <li>Late night / highway emergency</li>
+    <li>Car not starting / engine failure</li>
+    <li>Flat tyre or stuck vehicle</li>
   </ul>
 
   <p class="note-plain">👉 <strong>Stay calm. We handle everything.</strong></p>
@@ -135,10 +135,10 @@ if (isset($_GET['call']) && $_GET['call'] === '1') {
 <section>
   <h2>🚗 Situation-Based Copy</h2>
   <ul class="areas">
-    <li>🚧 <strong>Accident on Road?</strong> — Safe recovery with trained operators.</li>
-    <li>⚠️ <strong>Car Broke Down Suddenly?</strong> — Quick towing to garage or home.</li>
-    <li>🌙 <strong>Night Emergency?</strong> — 24×7 service – even at 2 AM.</li>
-    <li>🧳 <strong>Highway / City / Society?</strong> — We cover all Pune &amp; Pimpri-Chinchwad areas.</li>
+    <li> <strong>Accident on Road?</strong> — Safe recovery with trained operators.</li>
+    <li> <strong>Car Broke Down Suddenly?</strong> — Quick towing to garage or home.</li>
+    <li> <strong>Night Emergency?</strong> — 24×7 service – even at 2 AM.</li>
+    <li> <strong>Highway / City / Society?</strong> — We cover all Pune &amp; Pimpri-Chinchwad areas.</li>
   </ul>
 
  <a href="tel:08552911911" class="section-cta">

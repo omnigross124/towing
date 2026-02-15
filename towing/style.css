@@ -228,11 +228,11 @@ li {
   .floating-call-icon { display: none; }
 }
 
-/* SERVICES & AREAS */
+/* SERVICES & AREAS 
 .services li,
 .areas li {
   list-style: disc;
-}
+}*/
 
 /* FINAL CTA */
 .final {
@@ -557,4 +557,47 @@ footer {
   object-fit: cover;
   display: block;
   border-radius: 12px;
+}
+/* DESKTOP ONLY: square CARD (container), not just images */
+@media (min-width: 768px){
+
+  /* the whole section becomes the square white card */
+  .image-showcase{
+    width: min(700px, calc(100vw - 80px)); /* big but safe */
+    aspect-ratio: 4 / 3;                   /* ✅ square container */
+    margin: 20px auto;
+    padding: 14px;                         /* inner gap like a card */
+    background: #fff;
+    border-radius: 22px;
+    box-shadow: 0 14px 40px rgba(0,0,0,0.10);
+    border: 1px solid rgba(0,0,0,0.06);
+    overflow: hidden;                      /* hides scrollbars outside */
+  }
+
+  /* scroll area fills the square card */
+  .image-showcase .image-scroll{
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 18px;
+    scroll-snap-type: y mandatory;
+    background: #0b0f14; /* optional: looks premium behind images */
+  }
+
+  /* each snap takes full card height */
+  .image-showcase .snap-item{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    scroll-snap-align: start;
+  }
+
+  /* image fills the square properly */
+  .image-showcase img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
 }
