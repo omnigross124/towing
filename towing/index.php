@@ -236,6 +236,10 @@ if (isset($_GET['call']) && $_GET['call'] === '1') {
    href="tel:08552911911">
    📞 CALL NOW – 85529 11911
 </a>
+<!-- floating LOCATION button (above call button) -->
+<button class="floating-locate-icon" id="floatingLocate" aria-label="Share my location">
+  📍
+</button>
 
 <!-- 2floating CALL BUTTON -->
 <a href="tel:08552911911" class="floating-call-icon" aria-label="Call Now">

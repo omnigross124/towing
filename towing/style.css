@@ -601,3 +601,52 @@ footer {
     display: block;
   }
 }
+/* LOCATION floating icon (sits above call button) */
+.floating-locate-icon{
+  position: fixed;
+  bottom: 150px;          /* 👈 above call button (call is at 80px in your CSS) */
+  right: 18px;
+
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+
+  background: #ffffff;
+  color: #0b2a3a;         /* blue-grey theme */
+  border: 1px solid rgba(0,0,0,0.08);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 24px;
+  cursor: pointer;
+
+  box-shadow: 0 14px 32px rgba(0,0,0,0.30);
+  z-index: 99999;
+}
+
+/* small hover/press */
+.floating-locate-icon:active{
+  transform: translateY(1px);
+}
+
+/* optional pulse (so it feels like emergency UI but subtle) */
+.floating-locate-icon::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:50%;
+  box-shadow: 0 0 0 0 rgba(11,42,58,0.35);
+  animation: locatePulse 2.2s infinite;
+}
+@keyframes locatePulse{
+  0%{ box-shadow: 0 0 0 0 rgba(11,42,58,0.35); }
+  70%{ box-shadow: 0 0 0 16px rgba(11,42,58,0); }
+  100%{ box-shadow: 0 0 0 0 rgba(11,42,58,0); }
+}
+
+/* keep floating buttons mobile-only (same rule style as yours) */
+@media (min-width: 768px){
+  .floating-locate-icon{ display:none; }
+}
