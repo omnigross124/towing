@@ -13,40 +13,35 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-function sendLocationToWhatsApp() {
+const floatingLocate = document.getElementById("floatingLocate");
 
+// WhatsApp number with country code, no +
+const WHATSAPP_NUMBER = "918552911911";
+
+floatingLocate?.addEventListener("click", () => {
   if (!navigator.geolocation) {
     alert("Location not supported on this device.");
     return;
   }
 
   navigator.geolocation.getCurrentPosition(
-    function (position) {
-
-      const lat = position.coords.latitude;
-      const lng = position.coords.longitude;
+    (pos) => {
+      const lat = pos.coords.latitude;
+      const lng = pos.coords.longitude;
+      const accuracy = Math.round(pos.coords.accuracy || 0);
 
       const mapsLink = `https://maps.google.com/?q=${lat},${lng}`;
+      const msg = encodeURIComponent(
+        `I need towing. My live location: ${mapsLink}\nAccuracy: ~${accuracy}m`
+      );
 
-      const message =
-        `🚗 I need towing assistance.\n` +
-        `📍 My location:\n${mapsLink}`;
-
-      const whatsappURL =
-        `https://wa.me/918552911911?text=${encodeURIComponent(message)}`;
-
-      window.location.href = whatsappURL;
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, "_blank");
     },
-
-    function () {
-      alert("Unable to get location. Please enable GPS.");
+    (err) => {
+      if (err.code === 1) alert("Permission denied. Please allow location access.");
+      else if (err.code === 2) alert("Location unavailable. Turn on GPS and try again.");
+      else alert("Location request timed out. Please try again.");
     },
-
-    /* ✅ THIS PART MAKES IT FAST */
-    {
-      enableHighAccuracy: false,   // don't wait for GPS satellite
-      timeout: 4000,               // max wait = 4 seconds
-      maximumAge: 60000            // reuse recent location (1 min)
-    }
+    { enableHighAccuracy: true, timeout: 12000, maximumAge: 0 }
   );
-}
+});
