@@ -62,3 +62,4 @@
 {"time":"2026-02-16 15:29:53","ip":"::1","agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/144.0.0.0 Safari\/537.36"}
 {"time":"2026-02-16 15:31:31","ip":"::1","agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/144.0.0.0 Safari\/537.36"}
 {"time":"2026-02-16 15:31:31","ip":"::1","agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/144.0.0.0 Safari\/537.36"}
+{"time":"2026-02-16 15:42:54","ip":"::1","agent":"Mozilla\/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit\/605.1.15 (KHTML, like Gecko) Version\/18.5 Mobile\/15E148 Safari\/604.1"}
