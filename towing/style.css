@@ -650,3 +650,81 @@ footer {
 @media (min-width: 768px){
   .floating-locate-icon{ display:none; }
 }
+/* ============================
+   HERO IMAGE — FULL BLEED FIX
+   (No gaps. Clean on all screens.)
+============================ */
+
+/* Remove inherited section styling */
+.hero-image{
+  margin: 0 !important;
+  padding: 0 !important;
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+
+  width: 100%;
+}
+
+/* Image should behave like background banner */
+.hero-image img{
+  display: block;
+  width: 100%;
+  height: auto;
+
+  /* Prevent layout gaps */
+  margin: 0;
+  padding: 0;
+}
+
+/* 📱 MOBILE — full screen look */
+@media (max-width: 767px){
+  .hero-image img{
+    width: 100vw;
+    margin-left: calc(50% - 50vw); /* removes container padding effect */
+  }
+}
+
+/* ========= DESKTOP IMAGE CROPPING FIX ========= */
+@media (min-width: 1024px){
+
+  .hero-image{
+    height: 420px;          /* visible frame height */
+    overflow: hidden;       /* hides cropped top */
+  }
+
+  .hero-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    /* 🔥 THIS moves the image UP so bottom (car) shows */
+    object-position: center 75%;
+  }
+
+}
+
+
+
+/* ✅ Reduce gap between hero-image and hero section */
+.hero-image{
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* ✅ Pull hero content upward */
+.hero{
+  margin-top: 0 !important;
+  padding-top: 24px !important;   /* was too large */
+  min-height: auto !important;    /* stops big empty space */
+  justify-content: flex-start !important; /* removes vertical centering gap */
+}
+
+/* ✅ Optional: tighter spacing for heading + subtext */
+.hero h1{
+  margin-bottom: 14px !important;
+}
+.hero .sub{
+  margin-bottom: 14px !important;
+}
